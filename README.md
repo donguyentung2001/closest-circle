@@ -29,6 +29,13 @@ Go to the website https://texting-b1b47.web.app/
 
 Click on the squares to select/unselect the ones you want our circle to consider.
 
+<img width="387" alt="Screen Shot 2021-10-05 at 8 54 37 PM" src="https://user-images.githubusercontent.com/54921286/136716127-9ce42fa5-fb1c-4766-a2d1-20a6a8345f8d.png">
+
 Click "Generate" to generate a circle that minimizes the least squared distance. 
 
+<img width="245" alt="Screen Shot 2021-10-10 at 7 20 50 PM" src="https://user-images.githubusercontent.com/54921286/136716132-a53ceb72-8b4f-41f3-b3e7-5b5f0983d40b.png">
+
 Click "Reset Grid" to reset the algorithm with new set of squares.
+
+<img width="232" alt="Screen Shot 2021-10-10 at 7 21 00 PM" src="https://user-images.githubusercontent.com/54921286/136716133-4938cd66-7d84-4c1b-88d4-a43e0feb6a17.png">
+>
