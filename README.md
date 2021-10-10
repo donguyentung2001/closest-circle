@@ -29,7 +29,7 @@ Go to the website https://texting-b1b47.web.app/
 
 Click on the squares to select/unselect the ones you want our circle to consider.
 
-<img width="387" alt="Screen Shot 2021-10-05 at 8 54 37 PM" src="https://user-images.githubusercontent.com/54921286/136716127-9ce42fa5-fb1c-4766-a2d1-20a6a8345f8d.png">
+<img width="242" alt="Screen Shot 2021-10-10 at 7 20 43 PM" src="https://user-images.githubusercontent.com/54921286/136716168-4674e539-072e-434d-9477-c052663876bf.png">
 
 Click "Generate" to generate a circle that minimizes the least squared distance. 
 
