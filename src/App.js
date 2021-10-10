@@ -43,9 +43,9 @@ class Grid extends Component {
     this.drawCircle = this.drawCircle.bind(this)
     this.resetGrid = this.resetGrid.bind(this)
     this.state = {
-      conditions: [],
-      coordinates: [], 
-      closestPoint: [], 
+      conditions: [], //status of each circle: whether chosen or not
+      coordinates: [], //list of coordinates of circle
+      closestPoint: [], //list of points that our circle has to be close to
       context: null
     }
     for ( var i = 1; i <= 10; i++ ) {
@@ -61,8 +61,9 @@ class Grid extends Component {
   }
 
   changeClosest(point) {
+    // toggle the point to chosen if not chosen, and vice versa.
     var new_conditions = this.state.conditions 
-    var new_closestPoint = this.state.closestPoint
+    var new_closestPoint = this.state.closestPoint 
     if (this.state.conditions[point[0]][point[1]] == true) {
       new_conditions[point[0]][point[1]] = false 
       new_closestPoint.splice(new_closestPoint.indexOf(this.state.coordinates[point[0]][point[1]]), 1)
@@ -104,6 +105,7 @@ class Grid extends Component {
   }
 
   calculateRDerivative(x, y, r) { 
+    //calculate partial derivative of distance function with respect to radius of circle
     var output = 0
     for (let i = 0; i < this.state.closestPoint.length; i++) {
       let current_point = this.state.closestPoint[i]
@@ -114,6 +116,7 @@ class Grid extends Component {
   }
 
   calculateXDerivative(x, y, r) { 
+    // calculate partial derivative of distance function with respect to x coordinate of center
     var output = 0 
     for (let i = 0; i < this.state.closestPoint.length; i++) {
       let current_point = this.state.closestPoint[i]
@@ -124,6 +127,7 @@ class Grid extends Component {
   }
 
   calculateYDerivative(x,y,r) { 
+    // calculate partial derivative of distance function with respect to y coordinate of center
     var output = 0 
     for (let i = 0; i < this.state.closestPoint.length; i++) {
       let current_point = this.state.closestPoint[i]
@@ -134,7 +138,7 @@ class Grid extends Component {
   }
 
   generateCircle() {
-    var current_x = 100
+    var current_x = 100 //initialize values for x, y, r
     var current_y = 100
     var current_r = 1
     var learning_rate = 0.1
@@ -142,11 +146,11 @@ class Grid extends Component {
     var current_xDerivative = this.calculateXDerivative(current_x, current_y, current_r)
     var current_yDerivative = this.calculateYDerivative(current_x, current_y, current_r)
     var current_rDerivative = this.calculateRDerivative(current_x, current_y, current_r)
-    while ((current_xDerivative > 0.5 && current_yDerivative > 0.5 && current_rDerivative > 0.5) || iterations < 500) {
-      current_x = current_x - learning_rate*current_xDerivative
+    while ((current_xDerivative > 0.5 && current_yDerivative > 0.5 && current_rDerivative > 0.5) || iterations < 500) { //gradient descent step
+      current_x = current_x - learning_rate*current_xDerivative //update each variable with respect to its partial derivative
       current_y = current_y - learning_rate*current_yDerivative
       current_r = current_r - learning_rate*current_rDerivative
-      current_xDerivative = this.calculateXDerivative(current_x, current_y, current_r)
+      current_xDerivative = this.calculateXDerivative(current_x, current_y, current_r) //calculate new derivatives after update
       current_yDerivative = this.calculateYDerivative(current_x, current_y, current_r)
       current_rDerivative = this.calculateRDerivative(current_x, current_y, current_r)
       iterations += 1
@@ -164,6 +168,7 @@ class Grid extends Component {
   }
 
   resetGrid() { 
+    // reset all squares to be unchosen, erase any circle present on the grid.
     var new_conditions = this.state.conditions
     var new_closestPoint = []
     for (let i = 1; i <= 10; i++) {
