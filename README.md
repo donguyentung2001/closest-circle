@@ -38,4 +38,4 @@ Click "Generate" to generate a circle that minimizes the least squared distance.
 Click "Reset Grid" to reset the algorithm with new set of squares.
 
 <img width="232" alt="Screen Shot 2021-10-10 at 7 21 00 PM" src="https://user-images.githubusercontent.com/54921286/136716133-4938cd66-7d84-4c1b-88d4-a43e0feb6a17.png">
->
+
