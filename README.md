@@ -22,6 +22,10 @@ We stop the loop once the partial derivatives are all low enough ( less than or 
 
 The reason why we have a second condition is that, in case the partial derivatives do not converge to 0, which sometimes happens in gradient descent, then our algorithm does not result in an infinite loop. 
 
+Here are more details on the partial derivatives: 
+
+<img width="510" alt="Screen Shot 2021-10-10 at 8 00 59 PM" src="https://user-images.githubusercontent.com/54921286/136717276-61b6fcc9-3dd8-49eb-a245-bbfa983b7d24.png">
+
 
 
 # Demo 
